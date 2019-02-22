@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>RPG-Game</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+    <div id="header">
+        <h1 id="caption">Star Wars RPG Game</h1>
+    </div>
+    <div id="caracters">
+        <img class="char tt" src="https://placehold.it/100x75" height="100px", width="150" >
+        <img class="char" src="https://placehold.it/150x100">
+        <img class="char" src="https://placehold.it/150x100">
+        <img class="char" src="https://placehold.it/150x100">
+    </div>
+    <h3>Your Character</h3>
+    <div id="you">
+
+    </div>
+    <h3>Enemies Available to Attach</h3>
+    <div id="enemies"></div>
+    <div id="fight-section">
+        <h3>Fight Section</h3>
+        <button id="attack">Attack</button>
+        <h3>Defender</h3>
+        <div id="defender">
+            <p><samll>You attached Darth Maul for 8 damage</samll></p>
+            <p><samll>Darth Maul attached you back for 25 damage</samll></p>
+        </div>
+        <button id="restart">Restart</button>
+    </div> 
+    <script src="assets/javascript/game.js"></script>
+</body>
+</html>
