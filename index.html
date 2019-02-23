@@ -8,36 +8,54 @@
     <title>RPG-Game</title>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 
 <body>
-    <div id="header">
-        <h1 id="caption">Star Wars RPG Game</h1>
-    </div>
-    <div id="caracters">
-        <img class="char tt" src="https://placehold.it/100x75" height="100px", width="150" >
-        <img class="char" src="https://placehold.it/150x100">
-        <img class="char" src="https://placehold.it/150x100">
-        <img class="char" src="https://placehold.it/150x100">
-    </div>
-    <h3>Your Character</h3>
-    <div id="you">
-
-    </div>
-    <h3>Enemies Available to Attach</h3>
-    <div id="enemies"></div>
-    <div id="fight-section">
-        <h3>Fight Section</h3>
-        <button id="attack">Attack</button>
-        <h3>Defender</h3>
-        <div id="defender">
-            <p><samll>You attached Darth Maul for 8 damage</samll></p>
-            <p><samll>Darth Maul attached you back for 25 damage</samll></p>
+    <div id="container">
+        <div id="header">
+            <h1 id="caption">Star Wars RPG Game</h1>
         </div>
-        <button id="restart">Restart</button>
-    </div> 
+        <div id="caracter-container">
+            <div class="caracters">
+                <p class="name"><small>name1</small></p>
+                <img class="char" src="https://placehold.it/150x100" height="100px", width="150" >
+                <p class="healthpoint"><small>100</small></p>
+            </div>
+            <div class="caracters">
+                <p class="name"><small>name2</small></p>
+                <img class="char" src="https://placehold.it/150x100" height="100px", width="150">
+                <p class="healthpoint"><small>110</small></p>
+            </div>
+            <div class="caracters">
+                <p class="name"><small>name3</small></p>
+                <img class="char" src="https://placehold.it/150x100" height="100px", width="150">
+                <p class="healthpoint"><small>130</small></p>
+            </div>
+            <div class="caracters">    
+                <p class="name"><small>name3</small></p>
+                <img class="char" src="https://placehold.it/150x100" height="100px", width="150">
+                <p class="healthpoint"><small>150</small></p>
+            </div>    
+        </div>
+        <h3>Your Character</h3>
+        <div id="you">
+
+        </div>
+        <h3>Enemies Available to Attach</h3>
+        <div class="enemy-container"></div>
+        <div id="fight-section">
+            <h3>Fight Section</h3>
+            <button id="attack">Attack</button>
+            <h3>Defender</h3>
+            <div id="defender">
+                <p><samll>You attached Darth Maul for 8 damage</samll></p>
+                <p><samll>Darth Maul attached you back for 25 damage</samll></p>
+            </div>
+            <button id="restart">Restart</button>
+        </div> 
+    </div>
     <script src="assets/javascript/game.js"></script>
 </body>
 </html>
