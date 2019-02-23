@@ -1,17 +1,20 @@
 var defender = "";
 var you = "";
 var caracters = [ 
-    {name: "Master Yoda", healthPoint:200, attackPoints:50, image:"Yoda.jpeg"},
-    {name: "Mace Windu", healthPoint:175, attackPoints:45, image:"Mace_Windu.jpeg"},
-    {name: "Luke Skywalker", healthPoint:130, attackPoints:30, image:"Luke_Sky_walker.jpeg"},
-    {name: "Kylo Ren", healthPoint:125, attackPoints:40, image:"Kylo_Ren.Jpeg"},
+    {name: "Master Yoda", healthPoint:0, initialAP:0, attackPoints:0, image:"Yoda.jpeg"},
+    {name: "Mace Windu", healthPoint:0, initialAP:0, attackPoints:0, image:"Mace_Windu.jpeg"},
+    {name: "Luke Skywalker", healthPoint:0, initialAP:0, attackPoints:0, image:"Luke_Sky_walker.jpeg"},
+    {name: "Kylo Ren", healthPoint:0, initialAP:0, attackPoints:0, image:"Kylo_Ren.Jpeg"},
     
 ]
 
 function setUp(){
     for (var i=0; i<caracters.length; i++){
         caracters[i].healthPoint = Math.floor(Math.random() * 51) + 100
-        caracters[i].attackPoints = Math.floor(Math.random() * 5) + 5;
+        caracters[i].initialAP = Math.floor(Math.random() * 5) + 5;
+        caracters[i].attackPoints = caracters[i].initialAP;
+        console.log("char hp = " + caracters[i].healthPoint + " iap = " + caracters[i].initialAP +" ap = " + caracters[i].attackPoints)
+
     }
     var k = 0
     $('.char').each(function(){
@@ -32,13 +35,16 @@ $(document).on("click", "#attack", function(){
     var mHP = $(".me").attr("data-index");
     caracters[dHP].healthPoint -= caracters[mHP].attackPoints;
     caracters[mHP].healthPoint -= caracters[dHP].attackPoints;
-    caracters[mHP].attackPoints *= 2; 
+    caracters[mHP].attackPoints += caracters[mHP].initialAP; 
     $(".me").siblings(".healthpoint").html("<small>" + caracters[mHP].healthPoint + "</small>");
     $(".defed").siblings(".healthpoint").html("<small>" + caracters[dHP].healthPoint + "</small>");
-    console.log("me hp = " + caracters[mHP].healthPoint)
-    console.log("def hp = " + caracters[dHP].healthPoint)
-    console.log("me ap = " + caracters[mHP].attackPoints)
-
+    if (caracters[dHP].healthPoint <= 0){
+        alert("defernder dies");
+        $(".defender").remove();
+    }else if(caracters[mHP].healthPoint <= 0){ 
+        $(".me").remove();
+        alert("you die");
+    }
 });
 $(document).ready(function(){
     setUp();
@@ -53,14 +59,16 @@ $(document).on("click", ".caracters", function(){
     $(".enemy-container").children().addClass("enemies");
     $(".enemies").css({"margin-right":"4px"});
     $("#you").append($(this));
+    $("#caracter-container").empty()
     $(this).find("img").removeClass().addClass("me");
     console.log($(".me").attr("data-index"));
 });
 
 $(document).on("click", ".enemies", function(){
     alert("clicked on enemy");
-    //if ($("#defender").is(":empty")){
+    //if ($("#defender-container").is(":empty")){
         $(this).find("img").removeClass().addClass("defed");
-        $("#defender").prepend($(this));
+        $(this).removeClass().addClass("defender");
+        $("#defender-container").prepend($(this));
     //}
 });
