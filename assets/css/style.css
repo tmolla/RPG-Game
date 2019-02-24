@@ -21,6 +21,8 @@ body
 .caracters
 {
     border: 3px solid blue;
+    background-color: white;
+    color: black;   
 
 }
 
@@ -28,6 +30,7 @@ body
 {
     
     border: 3px solid orange;
+    background-color: orange;
 
 }
 
@@ -52,4 +55,5 @@ body
 .defender
 {
     border: 3px solid red;
+    background-color: red;
 }
