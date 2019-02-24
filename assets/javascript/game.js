@@ -2,7 +2,7 @@
 var caracters = [ 
     {name: "Master Yoda", healthPoint:0, initialAP:0, attackPoints:0, image:"Yoda.jpeg"},
     {name: "Mace Windu", healthPoint:0, initialAP:0, attackPoints:0, image:"Mace_Windu.jpeg"},
-    {name: "Luke Skywalker", healthPoint:0, initialAP:0, attackPoints:0, image:"Luke_Sky_walker3.jpeg"},
+    {name: "Luke Skywalker", healthPoint:0, initialAP:0, attackPoints:0, image:"Luke_Sky_Walker3.jpeg"},
     {name: "Darth Maul", healthPoint:0, initialAP:0, attackPoints:0, image:"Darth_Maul.png"},
     
 ]
